@@ -113,15 +113,9 @@ def sobelEdgeDetection(image, sigma, image_format, filter_shape):
 
     return np.squeeze(G), np.squeeze(theta)
 
-def cargar_imagen():
-    imgs = []
-    for i in range(0, 16):
-        img = cv2.imread('Calib_Images/image{}.jpg'.format(i))
-        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        imgs.append(img)
-    return imgs
 
-img = cargar_imagen()[5]
+
+img = cv2.imread('paperpiano/data/shapes.png')
 sigma = 1
 filter_shape = (31,31)
 image_format = 'RGB'
